@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form Uni</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+        <!-- font awesome cdn link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+          rel="stylesheet" />
+        <!-- Boxicons CSS -->
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+:root{
+--brown:#ece8db;
+}
+
+body{
+background:#842930;
+}
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+outline: none;
+border: none;
+text-transform: capitalize;
+text-decoration: none;
+transition: .2s linear;
+}
+.btn{
+margin-top: 1rem;
+display: inline-block;
+padding: .8rem 3rem;
+background:var(--brown);
+color:#fff;
+font-size:1.7rem;
+cursor: pointer;
+box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+border:0.1rem solid rgba(0,0,0,0.7);
+}
+.btn:hover{
+background: #222;
+box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+}
+html{
+font-size: 62.5%;
+overflow-x: hidden;
+scroll-behavior: smooth;
+}
+.header{
+font-family: 'Poppins', sans-serif;
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+z-index:1000;
+background: var(--brown);
+display:flex;
+align-items: center;
+justify-content: space-between;
+padding:2rem 9%;
+box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+
+}
+.header .logo{
+font-size:2.5rem;
+font-weight: bolder;
+color:#ffffff;
+
+}
+.header .logo i{
+color:#222;
+padding-right: .5rem;
+}
+.header .navbar a{
+font-size: 2.5rem;
+color: rgb(0, 0, 0);
+margin: 0 1rem;
+
+}
+.header .navbar a:hover{
+color: #842930;
+}
+
+.header .icons div{
+font-size: 2.5rem;
+margin-left: 1.7rem;
+cursor: pointer;
+color: #fff;
+
+}
+.header .icons div:hover{
+color: #222;
+}
+
+#menu-btn{
+display: none;
+
+}
+#search-form #search-box{
+    width:90%;
+    margin:0 1rem;
+}
+#search-form{
+position: fixed;
+top:-110%; left:0; 
+height:100%; width:100%;
+z-index: 1004;
+background:rgba(0,0,0,.8);
+display: flex;
+align-items: center;
+justify-content: center;
+padding:0 1rem;
+}
+
+#search-form.active{
+top:0;
+}
+
+#search-form #search-box{
+width:50rem;
+border-bottom: .1rem solid #fff;
+padding:1rem 0;
+color:#fff;
+font-size: 3rem;
+text-transform: none;
+background:none;
+}
+
+#search-form #search-box::placeholder{
+color:#eee;
+}
+
+#search-form label{
+color:#fff;
+cursor:pointer;
+font-size: 3rem;
+}
+
+#search-form label:hover{
+color:var(--green);
+}
+
+#search-form #close{
+position: absolute;
+color:#fff;
+cursor: pointer;
+top: 2rem; right:3rem;
+font-size: 5rem;
+}
+.container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 30px;
+}
+.form{
+    position: absolute;
+    max-width: 430px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 6px;
+    background:#f9f6f2;
+    height: 280px;
+}
+.selection{
+    width: 100px;
+    height: 20px;
+    border-radius: 6px;
+    border: none;
+    color: black;
+    cursor: pointer;
+    background-color:#f9f6f2;
+}
+.header1{
+    font-size: 28px;
+    font-weight: 600;
+    color: #232836;
+    text-align: center;
+    font-family: 'Poppins',cursive;
+}
+form{
+    margin-top: 30px;
+}
+.form .field{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 6px;
+}
+.field input,
+.field button{
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 6px;
+}
+.field input{
+    outline: none;
+    padding: 0 15px;
+    border: 1px solid#CACACA;
+}
+.field input:focus{
+    border-bottom-width: 2px;
+}
+.field button{
+    color: black;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.field button:hover{
+    background-color: #a3a19c;
+}
+.form-link{
+    text-align: center;
+    margin-top: 10px;
+}
+.form-link span,
+.form-link a{
+    font-size: 14px;
+    font-weight: 400;
+    color: black;
+    font-family: 'Poppins',cursive;
+}
+.form a{
+    color: #000000;
+    text-decoration: none;
+}
+.form-content a:hover{
+    text-decoration: underline;
+}
+.line{
+    position: relative;
+    height: 1px;
+    width: 100%;
+    margin: 36px 0;
+    background-color: #000000;
+}
+.line::before{
+    content: 'Or';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:  rgb(255, 223, 153);
+    color: #000000;
+    padding: 0 15px;
+    font-size: 2.0em;
+}
+table{
+ position: absolute;
+ z-index: 2;
+ left: 50%;
+ top: 85%;
+ transform: translate(-50%,-50%);
+ width: 60%; 
+ border-collapse: collapse;
+ border-spacing: 0;
+ box-shadow: 0 2px 15px rgba(102, 102, 102, 0.7);
+ border-radius: 1px 1px 1px 1px;
+ overflow: hidden;
+}
+
+td , th{
+ padding: 15px 20px;
+ text-align: center;
+
+}
+th{
+ background-color: #fff;
+ color: #000000 ;
+ font-family: 'Open Sans',Sans-serif;
+ font-weight: 200;
+ text-transform: uppercase;
+
+}
+tr{
+ width: 100%;
+ background-color:#ece8db;
+ color: rgb(0, 0, 0);
+ font-family: 'Montserrat', sans-serif;
+ font-size: small;
+}
+ </style>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="homepage.html">Home</a>
+            <a href="form.html">Uni</a>
+            <a href="index.html">Blog</a>
+        </nav>
+    </header>
+
+<section class="container forms">
+    <div class="form login">
+        <div class="form-content">
+            <header class="header1">FIND UNI</header>
+            <form action="" method="post">
+                <!--user input country-->
+                <div class="field input-field">
+                    <input type="text" id="country" name="text"placeholder="Enter Country Name Here" required>
+                </div>
+
+                <div class="field input-field">
+                    <select id="variety" class="selection">
+                        <option>UniType</option>
+                        <option value="university">University</option>
+                        <option value="universiti">Universiti</option>
+                        <option value="college">College</option>
+                    </select>
+                    
+                    <div class="field input-field">
+                   <input class="search-btn" type="button" value="Search" onclick="buttonClicked()">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<section>
+    <table id="table">
+        <tr>
+        <th>University</th>
+        <td class="uni0"></td>
+        <td class="uni1"></td>
+        <td class="uni2"></td>
+        <td class="uni3"></td>
+        <td class="uni4"></td>
+        </tr>
+        
+        <tr>
+        <th>WebPages</th>
+        <td class="linkweb0"></td>  
+        <td class="linkweb1"></td>         
+        <td class="linkweb2"></td>    
+        <td class="linkweb3"></td>
+        <td class="linkweb4"></td>
+        </tr>
+    </table>
+</div>
+</section>
+
+</body>
+<script src="form.js"></script>
+</html>

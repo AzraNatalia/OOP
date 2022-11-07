@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIND UNI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet" />
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+    :root{
+
+    --brown:#f9f6f2;
+    }
+    body{
+    background:#842930;
+    justify-content: center;
+    }
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: .2s linear;
+    }
+    .btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .8rem 3rem;
+    background:var(--brown);
+    color:rgb(0, 0, 0);
+    font-size:1.7rem;
+    cursor: pointer;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+    border:0.1rem solid rgb(244, 244, 244);
+    font-family: 'Poppins', sans-serif;
+    }
+    .btn:hover{
+    background:#fff;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    }
+    html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    }
+    section{
+    padding:3rem 9%;
+    }
+    .heading{
+    background: url("https://blogger.googleusercontent.com/img/a/AVvXsEh9r07KJUI4tEdTXx8nBqCJL0yXUtEm20h8Dws4F75fMLH4qqoS1_o79M9d7VFzxYM3Q16O2mdZe8bOqyV0-3q7lri9R_INIYa6WIlW3R9OZ0uOqwx3yYxDf1ezXpO5LeCXt4nrmJfGHSLz_yelpdsWO6h6LaY4LoIlglQq4_BXyOVsNjnDrHjSIlyW=s5676") no-repeat;
+    background-size:cover;
+    background-position: center;
+    text-align: center;
+    padding-top: 12rem;
+    padding-bottom: 8rem;
+    border-bottom: 0.1rem solid rgba(0,0,0,0.7);
+    }
+    .heading h1{
+    color: rgb(0, 0, 0);
+    font-size:20px;
+    font-family: 'Poppins', sans-serif;
+    }
+    .header{
+    font-family: 'Poppins', sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index:1000;
+    background: var(--brown);
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:2rem 9%;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    }
+    .header .logo{
+    font-size:10rem;
+    font-weight: bolder;
+    color:#ffffff;
+    }
+    .header .logo i{
+    color:#222;
+    padding-right: .5rem;
+    }
+    .header .navbar a{
+    font-size: 2.5rem;
+    color: rgb(0, 0, 0);
+    margin: 0 1rem;
+
+    }
+    .header .navbar a:hover{
+    color:#842930;
+    }
+    .header .icons div{
+    font-size: 2.5rem;
+    margin-left: 1.7rem;
+    cursor: pointer;
+    color: #fff;
+
+    }
+    .header .icons div:hover{
+    color: #222;
+    }
+
+    #menu-btn{
+    display: none;
+
+    }
+    @keyframes fadeLeft {
+    0%{
+
+    opacity: 0;
+    transform: translateY(-5rem);
+    }
+    }
+
+    @keyframes fadeUp {
+        0%{
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    }
+    .home{
+        padding-top: 14rem;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        font-family: 'Poppins', sans-serif
+    } 
+    .home .slides-container .slide{
+
+        display:flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        display:none;
+    }
+    .home .slides-container .slide.active{
+        display:flex;
+    }
+    .home .slides-container .slide .content{
+        flex: 1 1 40rem;
+        animation: fadeLeft .4s linear .4s backwards;
+    }
+    .home .slides-container .slide .content span{
+        color: #000;
+        font-size:2.5rem;
+    }
+    .home .slides-container .slide .content h3{
+        font-size:6rem;
+        color: #222;
+        padding:.5rem 0;
+    }
+    .home .slides-container .slide .img{
+        flex: 1 1 40rem;
+        margin: 3rem 0;
+    }
+    .home .slides-container .slide .img img{
+        width: 100%;
+        animation: fadeUp .4s linear;
+    }
+    .home #next-slide,
+    .home #prev-slide{
+
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 5rem;
+        width: 5rem;
+        line-height: 5rem;
+        box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.7);
+        border:0.1rem solid rgba(0,0,0,0.7);
+        text-align: center;
+        background: var(--purple);
+        font-size:2rem;
+        color: #fff;
+        cursor: pointer;
+
+    }
+    .home #next-slide:hover,
+    .home #prev-slide:hover{
+        background:#222;
+        color: #fff;
+        box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    }
+    .home #prev-slide{
+        left:2rem;
+    }
+    .home #next-slide{
+        right:2rem;
+    }
+    .box{
+        width: 100%;
+        height: auto;
+        background: #f9f6f2;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        font-family: 'Poppins', sans-serif
+    }
+    .box h3{
+        text-align: center;
+        padding-top: 25px;
+        font-size: 20px;
+        padding-left: 100px;
+    }
+    .boxing{
+        width: 140px;
+        height: 40px;
+        margin: 25px;
+        box-sizing: border-box;
+        font-size: 20px;
+        margin-top: 1rem;
+        display: inline-block;
+        padding: .8rem 3rem;
+        color:#fff;
+        cursor: pointer;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+        border:0.1rem solid rgba(0,0,0,0.7);
+        font-size:1.9rem;
+    }
+    .boxing:hover{
+    background: #222;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+
+    }
+</style>
+</head>
+<body>
+
+<header class="header">
+    <nav class="navbar">
+        <a href="homepage.html">Home</a>
+        <a href="form.html">Uni</a>
+        <a href="index.html">Blog</a>
+    </nav>
+</header>
+
+<section class="home" id="home">
+    <div class="slides-container">
+
+        <div class="slide active">
+            <div class="content">
+                <span>FIND UNI</span>
+                <h3>WORLDWIDE UNIVERSITY</h3>
+                <a href="form.html" class="btn">Uni</a>
+                <a href="index.html" class="btn">Blog</a>
+            </div>
+            <div class="img">
+                <img src="https://www.sheffield.ac.uk/sites/default/files/styles/two_thirds_2x/public/2019-08/Firth%20Court.jpg?h=71478ac3&itok=EZL5fChT" width="935" height="430" alt="">
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="content">
+                <span>The privilege of a university education is a great one; the more widely it is 
+                    extended the better for any country</span>
+            </div>
+            <div class="img">
+                <img src="https://ctfimages.intoglobal.com/xw2h6mjophtz/731sOVK2X4DrG83SK4jXAf/395ba54e3dc059a2fbb5b1fa5ca33cf3/Contentful_-_Campus_LifeUOM.jpg" width="935" height="430" alt="">
+            </div>
+        </div>
+    </div>
+    <div id="next-slide" class="fas fa-angle-right" onclick="next()"></div>
+    <div id="prev-slide" class="fas fa-angle-left" onclick="next()"></div>
+</section>
+
+<script>
+    let slides = document.querySelectorAll('.home .slides-container .slide');
+
+let index = 0;
+function next(){
+
+    slides[index].classList.remove('active');
+    index = (index + 1) % slides.length;
+    slides[index].classList.add('active');
+
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CRUD: CReate, Update, Delete PHP MySQL</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="photon.min.css"                   >
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="homepage.html">Home</a>
+            <a href="form.html">Uni</a>
+            <a href="index.html">Blog</a>
+        </nav>
+    </header>
+
+    <div class="input-group">
+	<form>
+        <h1>CRUD File!</h1>
+
+		<div class="input-group1">
+			<label>File Name</label>
+			<input id="fileName" type="text">
+		</div>
+		<div class="input-group2">
+			<label>Content</label>
+			<textarea id="fileContents" row="5"></textarea>
+		</div>
+		<div class="input-group">
+        <button id="btnCreate" class="btn btn-default">Create</button>
+        <button id="btnUpdate" class="btn btn-default">Update</button>
+        <button id="btnRead" class="btn btn-default">Read</button>
+        <button id="btnDelete" class="btn btn-default">Delete</button>
+		</div>
+	</form>
+</body>
+<script src="main.js"></script>
+</html>
